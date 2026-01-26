@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+double calculateAvg(int grades[], int size);
+int countPassers(int grades[], int size);
+
+/* Student Grade Analyzer
+Create a C++ program that analyzes the grades of five students. 
+The program should use a fixed-size array to store the grades and implement 
+two user-defined functions: one to calculate the average grade and another 
+to count how many students passed, with a passing mark defined as 75 or higher. 
+After processing, the program should display all the grades, the computed average, 
+and the total number of passers. Students must use standard array indexing and 
+avoid dynamic memory allocation or pointers. For an additional challenge, 
+they may modify the program to allow the user to re-enter a new set of five grades 
+and repeat the analysis.
+
+goal 1: calculate avg grade
+goal 2: count passer
+goal 3: display grades 
+*/
+
+int main(){
+
+int gradesarray[5];
+cout << "===Student Grade Analyzer===\n";
+cout << "Enter the grades of five students:\n";
+cin >> gradesarray[0];
+cin >> gradesarray[1];  
+cin >> gradesarray[2];
+cin >> gradesarray[3];
+cin >> gradesarray[4];
+
+double average = calculateAvg(gradesarray, 5);
+int passers = countPassers(gradesarray, 5);
+cout << "\nGrades of the students: " << endl; 
+for(int i = 0; i < 5; i++) {
+    cout << "Student " << (i + 1) << ": " << gradesarray[i] << endl;
+}
+cout << "Average Grade: " << average << endl;
+cout << "Passed students: " << passers << endl;
+
+
+
+
+    return 0;
+}
+
+double calculateAvg(int grades[], int size) {
+    double sum = 0;
+    for(int i = 0; i < size; i++) {
+        sum += grades[i];
+    }
+    return sum / size;
+}
+
+int countPassers(int grades[], int size) {
+    int count = 0;
+    for(int i = 0; i < size; i++) {
+        if(grades[i] >= 75) {
+            count++;
+        }
+    }
+    return count;
+}
