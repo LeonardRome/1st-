@@ -1,0 +1,59 @@
+//Malaran, Leonard Rome M. TN06
+#include <iostream>
+using namespace std;
+double calculateAvg(double temps[], int size);
+int countThreshold(double temps[], int size, double threshold);
+double max(double temps[], int size);
+double min(double temps[], int size);
+
+
+/*goal 1: calculate avg temperature
+goal 2: count days above threshold
+goal 3: find max and min temperature    
+*/
+
+
+int main (){
+double temperatures[7];
+
+do{
+cout << "\t~~~Weekly Temparature analyzer~~~\n";
+cout << "Enter the temperatures for seven days:\n";
+for(int i = 0; i < 7; i++) {
+cin >> temperatures[i]; }
+
+
+double averageTemp = calculateAvg(temperatures, 7);
+int days30 = countThreshold(temperatures, 7, 30.0);
+
+cout << "\t ~~~Temperatures of the week~~~ " << endl;
+for(int i = 0; i < 7; i++) {
+    cout << "Day " << (i + 1) << ": " << temperatures[i] << "°C" << endl;
+}
+cout << "Average Temperature: " << averageTemp << "°C" << endl;
+cout << "Days above 30°C: " << days30 << endl;
+} while(true);
+    return 0;
+}
+
+double calculateAvg(double temps[], int size) {
+    double sum = 0;
+    for(int i = 0; i < size; i++) {
+        sum += temps[i];
+    }
+    return sum / size;
+}
+
+int countThreshold(double temps[], int size, double threshold) {
+    int count = 0;
+    for(int i = 0; i < size; i++) {
+        if(temps[i] > threshold) {
+            count++;
+        }
+    }
+    return count;
+}
+
+double max(double temps[], int size) { 
+    
+}
