@@ -1,0 +1,21 @@
+//Malaran, Leonard Rome
+#include <iostream>
+#include <cstring>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+int main(){
+
+    string words;
+    cout << "Enter some string: ";
+    getline(cin, words);
+    stringstream ss(words);
+
+    while (ss >> words){
+        cout << words << endl;
+    }
+
+    return 0;
+}
