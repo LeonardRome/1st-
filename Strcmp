@@ -1,0 +1,29 @@
+//Malaran, Leonard Rome
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main(){
+
+    string str1, str2;
+    cout << "*****************\n";
+    cout << "STRING COMPARE\n";
+    cout << "*****************\n";
+    cout << "Enter a first word (str1): ";
+    cin >> str1;
+    cout << "\nEnter a second word (str2): ";
+    cin >> str2;
+
+    int cmp = strcmp(str1.c_str(), str2.c_str());
+    if(cmp == 0){
+        cout << "equal." << endl;
+    }   
+    else if(cmp > 0){
+        cout << "positive." << endl;
+    }
+    else {
+        cout << "negative." << endl;
+    }
+
+    return 0;
+}
