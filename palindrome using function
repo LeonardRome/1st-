@@ -1,0 +1,31 @@
+//Malaran, Leonard Rome
+#include <iostream>
+#include <cstring>
+using namespace std;
+void (palindrome)(char str1[]);
+
+int main() {
+
+    char str1[200];
+    cout << "*****************\n";
+    cout << "PALINDROME\n";
+    cout << "*****************\n";
+    cout << "Enter a word: "; 
+    cin >> str1;
+
+    palindrome(str1);
+
+
+    return 0;
+}
+
+void palindrome(char str1[]) {
+    string rev = str1;
+    reverse(rev.begin(), rev.end());
+    
+    if (rev == str1) {
+        cout << str1 << " is a palindrome." << endl;
+    } else {
+        cout << str1 << " is not a palindrome." << endl;
+    }
+}
