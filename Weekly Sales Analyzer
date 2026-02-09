@@ -1,0 +1,96 @@
+//Malaran, Leonard Rome
+#include <iostream>
+using namespace std;
+
+/*goal 1: calculate total sales
+goal 2: calculate averag sales & highest sales
+add goal3: count how many days exceeded a user-defined sales target
+*/
+
+//function prototypes
+double totalSales(double sales[], int size);
+double avgSales(double sales[], int size);
+double highestSales(double sales[], int size);
+double checkTarget(double sales[], int size, double target);
+
+//start of main function
+int main (){
+double sales[7];
+double target;
+
+do{
+cout << "\t~~~Weekly Sales Analyzer~~~\n";
+cout << endl;
+cout << "Enter the sales for seven days:\n";
+for(int i = 0; i < 7; i++) {
+cin >> sales[i]; }
+cout << "Enter the sales target\n";
+cin >> target;
+
+//initialize the variable to the calling of function
+double total = totalSales(sales, 7);
+double avg = avgSales(sales,  7);
+double highest = highestSales(sales, 7);
+double exceed = checkTarget(sales, 7, target);
+
+cout << "\t ~~~Sales of the week~~~ " << endl;
+for(int i = 0; i < 7; i++) {
+    cout << "Day " << (i + 1) << ": " << sales[i] << endl;
+} // this shows the day and value
+
+//the cout and calling of function
+cout << "Total Sales: " << total << endl;
+cout << "Average Sales: " << avg << endl;
+cout << "the highest sales is: " << highest << endl;
+cout << "Days exceeded the sales: " << exceed << endl;
+} 
+while(true);
+
+    return 0;
+}
+
+
+/*~function definitions~
+this function is to count total sales
+*/
+
+double totalSales(double sales[], int size) {
+    double sum = 0;
+    for(int i = 0; i < size; i++) {
+        sum += sales[i];
+    }
+    return sum;
+    
+}
+
+//this function is to calculate the average
+double avgSales(double sales[], int size) {
+    double sum = 0;
+    for(int i = 0; i < size; i++) {
+        sum += sales[i];
+    }
+    return sum / size;
+}
+//this is to check for the highest sale
+double highestSales(double sales[], int size) {
+    double highest = sales[0]; 
+    
+    for (int i = 1; i < size; i++) {
+        if (sales[i] > highest) {
+            highest = sales[i]; // Update highest
+            
+        }
+    }
+    return highest;
+}
+
+//this function is the user defined exceeded sales
+double checkTarget(double sales[], int size, double target) {
+    int count = 0;
+    for(int i = 0; i < size; i++) {
+        if(sales[i] > target) {
+            count++;
+        }
+    }
+    return count;
+}
