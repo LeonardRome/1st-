@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+
+    struct Node {
+        int data;
+        Node* next;
+    };
+    
+Node* head = NULL;
+
+void insertBeginning(int value){
+    Node* newNode = new Node();
+    
+    newNode->data = value;
+    newNode->next = head;
+    
+    head = newNode;
+    
+    cout << value << "inserted at beginning. \n";
+}
+
+void deleteNode(int value){
+    if (head == NULL) {
+        cout << "List is empty.\n";
+        return;
+    } 
+    
+    Node* temp = head; //current
+    Node* prev = NULL;
+    
+    // If head node contains the value
+    if (temp != NULL && temp->data == value) {
+        head = temp->next;
+        delete temp;
+        
+        cout << value << "deleted.\n";
+        return;
+    }
+    
+// Search for the node
+while (temp != NULL && temp->data != value) {
+    prev = temp;
+    temp = temp->next;
+}
+
+// Value not found
+if(temp == NULL){
+    cout << value << "not found.\n";
+    return;
+}
+
+prev->next = temp->next;
+delete node
+
+void display(){
+    
+}
+
+void search(int value){
+    Node* temp = head;
+    while()
+}
+
+int main (){
+
+    
+    return 0;
+}
