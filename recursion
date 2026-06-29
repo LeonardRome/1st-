@@ -1,0 +1,24 @@
+//Malaran, Leonard Rome M.
+#include <iostream>
+using namespace std;
+int countElement(int arr[], int n, int index, int value) {
+if (index >= n || arr[index] != value) {
+return 0;
+}
+return 1 + countElement(arr, n, index + 1, value);
+}
+void findFrequency(int arr[], int n, int index) {
+if (index >= n) {
+return;
+}
+int count = countElement(arr, n, index, arr[index]);
+cout << arr[index] << " appears " << count << " time(s)" << endl;
+findFrequency(arr, n, index + count);
+}
+CCS0015L-Data Structures and Algorithms Page 3 of 8
+int main() {
+int arr[] = {1, 2, 2, 3, 4, 4, 4, 5, 5};
+int n = sizeof(arr) / sizeof(arr[0]);
+findFrequency(arr, n, 0);
+return 0;
+}
