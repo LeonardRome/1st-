@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+
+void findFrequency(int arr[], int n, int index) {
+    if (index >= n)
+    return;}
+    
+    int count = 1;
+    
+    while(index + count < n && arr[index] == arr[index +count]) {
+        count++;
+    }
+    
+    cout << arr[index] << "occurs " << count << " time";
+    if (count > 1)
+        cout << "s";
+        
+        
+    cout << endl;
+    
+    findFrequency(arr,n,index + count);
+    }
+    
+    int main(){
+        int arr[] = {2,2,3,3,3,5,6,6,8,8,8,8};
+        int n = sizeof(arr) / sizeof(arr[0]);
+        
+        
+        
+    }
